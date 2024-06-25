@@ -1,15 +1,12 @@
-// About.tsx
 import { forwardRef } from 'react';
 
-interface AboutProps {
-  // Define any additional props if needed
+interface ProjectsProps {
 }
 
-const About = forwardRef<HTMLElement, AboutProps>((props, ref) => (
-  <section id="about" ref={ref} className="section">
-    <h2>About Section</h2>
-    {/* Add content for About section */}
+const Projects = forwardRef<HTMLElement, ProjectsProps>((props, ref) => (
+  <section id="projects" ref={ref} className="section">
+    <h2>Projects Section</h2>
   </section>
 ));
 
-export default About;
+export default Projects;
