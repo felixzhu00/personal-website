@@ -9,20 +9,14 @@ import Contact from './components/Contact'
 import ScrollToSection from './components/util/ScrollToSection'
 
 const App: React.FC = () => (
-  <Navigation />
-  // <SectionRefsProvider>
-  //     <ScrollToSection />
-  //     <div className="flex h-screen">
-        
-  //       <div className="flex-1 overflow-auto">
-  //         <Home />
-  //         <About />
-  //         <Skills />
-  //         <Projects />
-  //         <Contact />
-  //       </div>
-  //     </div>
-  // </SectionRefsProvider>
+  <>
+    <Navigation />
+    <Home />
+    <About />
+    {/* <Skills /> */}
+    {/* <Projects /> */}
+    {/* <Contact /> */}
+  </>
 )
 
 export default App
