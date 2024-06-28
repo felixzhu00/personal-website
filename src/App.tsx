@@ -13,7 +13,7 @@ const App: React.FC = () => (
     <Navigation />
     <Home />
     <About />
-    {/* <Skills /> */}
+    <Skills />
     {/* <Projects /> */}
     {/* <Contact /> */}
   </>

@@ -19,6 +19,7 @@
   .pg-style {
     @apply text-textBase ml-[20%] flex h-full w-4/5 bg-primary;
   }
+
 }
 
 .theme-white {
@@ -28,7 +29,7 @@
     --color-bg-primary:#1C1E1A;
 }
 
-.svg-icon{
+.svg-color{
   fill: var(--color-text-base);
 }
 
