@@ -5,40 +5,37 @@ import GitHubIcon from '../assets/svg/github.svg?react'
 import Logo from '../assets/logo.svg?react'
 import LinkedInIcon from '../assets/svg/linkedin.svg?react'
 
-const Navigation: React.FC =
-  () => {
+const Navigation: React.FC = () => {
+  const navItems = [
+    { id: '01', label: 'About', href: '#about' },
+    { id: '02', label: 'Skills', href: '#skills' },
+    { id: '03', label: 'Projects', href: '#projects' },
+    { id: '04', label: 'Contact', href: '#contact' },
+  ]
 
-    const navItems = [
-      { id: "01", label: "About", href: "#about" },
-      { id: "02", label: "Skills", href: "#skills" },
-      { id: "03", label: "Projects", href: "#projects" },
-      { id: "04", label: "Contact", href: "#contact" },
-    ];
-
-
-    return (
-      <header className="fixed top-0 h-[100px] w-full items-center px-[5vw] text-sm">
-        <nav className="flex h-full w-full flex-row items-center justify-between bg-primary font-mono text-textBase">
-          <SVGIcon SvgComponent={Logo} className="aspect-square w-[45px]" />
-          <div className="flex flex-row items-center">
-            <ul className="flex flex-row">
-              {navItems.map((item) => (
-                <li key={item.id} className="mx-[5px]">
-                  <a href={item.href} className="p-[10px]">
-                    <span className="text-secondary mr-[5px]">{item.id}.</span>
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-            <a href="" className="rounded border border-secondary px-4 py-3 text-secondary ml-[15px]">
-              Resume
-            </a>
-          </div>
-        </nav>
-      </header>
-    );
-  }
+  return (
+    <header className="fixed top-0 h-[100px] w-full items-center px-[5vw] text-sm">
+      <nav className="flex h-full w-full flex-row items-center justify-between bg-primary font-mono text-textBase">
+        <SVGIcon SvgComponent={Logo} className="aspect-square w-[45px]" />
+        <div className="flex flex-row items-center">
+          <ul className="flex flex-row">
+            {navItems.map((item) => (
+              <li key={item.id} className="mx-[5px]">
+                <a href={item.href} className="p-[10px]">
+                  <span className="mr-[5px] text-secondary">{item.id}.</span>
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <a href="" className="ml-[15px] rounded border border-secondary px-4 py-3 text-secondary">
+            Resume
+          </a>
+        </div>
+      </nav>
+    </header>
+  )
+}
 
 export default Navigation
 // <nav className="fixed left-0 flex h-full w-1/5 flex-col gap-0.5 border-r-8 border-r-secondary bg-primary p-16 text-xl font-semibold text-textBase hidden sm:block">

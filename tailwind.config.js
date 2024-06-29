@@ -10,10 +10,8 @@ export default {
         textAccent: 'var(--color-text-accent)',
       },
       fontFamily: {
-        sans: ['Inter', 'Arial', 'sans-serif'], // Replace 'Inter' with your custom font name
-      },
-      fontWeight: {
-        '33': '33',
+        sans: ['Calibre', 'Inter', 'San Francisco', 'SF Pro Text', '-apple-system', 'system-ui', 'sans-serif'],
+        mono: ['SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', 'monospace'],
       },
     },
   },

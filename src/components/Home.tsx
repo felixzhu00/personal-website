@@ -1,8 +1,8 @@
 const Home: React.FC = () => {
   return (
-    <section className="flex h-full w-full flex-col items-start justify-center">
+    <section className="flex h-full w-full flex-col items-start justify-center mx-auto">
       <div>
-        <h1 className="mb-[30px] ml-[4px] text-secondary">Hi, my name is</h1>
+        <h1 className="mb-[30px] ml-[4px] text-secondary font-normal leading-[1.1] font-mono">Hi, my name is</h1>
       </div>
       <div>
         <h2 className="m-0 mb-[10px] ml-[4px] text-[clamp(40px,8vw,80px)] font-semibold leading-[1.1] text-textBase">Felix Zhu.</h2>
@@ -15,7 +15,11 @@ const Home: React.FC = () => {
           Welcome to my personal website! Here you can learn more about me. Feel free to explore my projects, skills, and contact information.
         </p>
       </div>
-      <div></div>
+      <div>
+        <button className="rounded border border-secondary px-4 py-3 text-secondary mt-[50px] font-mono">
+        Learn More
+        </button>
+      </div>
     </section>
   )
 }

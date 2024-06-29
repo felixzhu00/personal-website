@@ -3,7 +3,7 @@ const config = {
     tabWidth: 2,
     semi: false,
     singleQuote: true,
-    printWidth: 10,
+    printWidth: 150,
     plugins: ['prettier-plugin-tailwindcss'],
   };
   
