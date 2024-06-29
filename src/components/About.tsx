@@ -1,13 +1,5 @@
-import { forwardRef } from 'react'
-
-interface AboutProps {}
-
-const About = forwardRef<HTMLElement, AboutProps>((props, ref) => (
-  <section
-    id="about"
-    ref={ref}
-    className="pg-style flex-col p-16 text-xl font-semibold"
-  >
+const About = () => (
+  <section id="about" className="pg-style flex-col p-16 text-xl font-semibold">
     <h1 className="mb-16 text-6xl">About</h1>
     <div className="flex h-full flex-row justify-center">
       <p>
@@ -38,6 +30,6 @@ const About = forwardRef<HTMLElement, AboutProps>((props, ref) => (
       />
     </div>
   </section>
-))
+)
 
 export default About

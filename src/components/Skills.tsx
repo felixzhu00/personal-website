@@ -97,10 +97,10 @@ const renderSkills = () => {
       skillSections.push(
         <div
           key={category}
-          className="flex h-full w-full flex-row justify-between gap-10"
+          className="flex h-full w-full flex-row justify-between gap-12"
         >
-          <h3 className="w-1/4 p-2 text-3xl">{category}</h3>
-          <div className="h-full w-3/4 grow border-b-2 border-secondary">
+          <h3 className="w-1/5 p-2 pt-10 text-3xl">{category}</h3>
+          <div className="h-full w-4/5 grow border-b-2 border-secondary">
             <div className="flex flex-row flex-wrap gap-2 p-2">
               {skillItems}
             </div>
