@@ -55,7 +55,7 @@ const skills: SkillsObject = {
     MongoDB: MongoDBIcon,
     MySQL: MySQLIcon,
   },
-  DataScience: {
+  'Data Science': {
     'Jupyter Notebook': JupyterIcon,
     Pandas: PandasIcon,
     Matplotlib: MatplotlibIcon,
@@ -116,7 +116,7 @@ const renderSkills = () => {
 const Skills = () => {
   return (
     <section id="skills" className="pg-style flex flex-col p-16">
-      <h2 className="mb-16 text-6xl">Skills Section</h2>
+      <h2 className="header">Skills</h2>
 
       <div className="flex flex-col">{renderSkills()}</div>
     </section>

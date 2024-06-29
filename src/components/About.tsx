@@ -1,6 +1,6 @@
 const About = () => (
-  <section id="about" className="pg-style flex-col p-16 text-xl font-semibold">
-    <h1 className="mb-16 text-6xl">About</h1>
+  <section id="about" className="pg-style flex-col">
+    <h1 className="header">About</h1>
     <div className="flex h-full flex-row justify-center">
       <p>
         Hi, I'm Felix Zhu, a recent graduate with a Bachelor's degree in

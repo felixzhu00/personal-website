@@ -6,7 +6,7 @@ const Home = forwardRef<HTMLElement, HomeProps>((props, ref) => (
   <section
     id="home"
     ref={ref}
-    className="pg-style items-center justify-center text-xl font-semibold"
+    className="pg-style items-center justify-center "
   >
     <div className="flex flex-col items-center text-center">
       <h2>Felix Zhu</h2>

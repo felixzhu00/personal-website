@@ -17,7 +17,10 @@
 
 @layer components {
   .pg-style {
-    @apply text-textBase ml-[20%] flex h-full w-4/5 bg-primary;
+    @apply text-textBase ml-[20%] flex h-full w-4/5 bg-primary text-xl font-semibold p-16;
+  }
+  .header {
+    @apply mb-16 text-6xl
   }
 
 }
