@@ -22,6 +22,9 @@
   .header {
     @apply mb-16 text-6xl
   }
+  .form-group{
+    @apply flex flex-col px-2 gap-2
+  }
 
 }
 
