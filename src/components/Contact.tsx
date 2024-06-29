@@ -32,7 +32,7 @@ const Contact: React.FC = () => {
   return (
     <section id="contact" className="pg-style flex flex-col">
       <h2 className="header">Contact</h2>
-      <form onSubmit={handleSubmit} className='flex flex-col gap-2 bg-secondary'>
+      <form onSubmit={handleSubmit} className='flex flex-col gap-2 bg-secondary rounded-xl p-10'>
         <div className="form-group flex flex-col">
           <label htmlFor="name">Name</label>
           <input
@@ -48,7 +48,7 @@ const Contact: React.FC = () => {
         <div className="form-group flex flex-col">
           <label htmlFor="email">Email</label>
           <input
-          className='w-1/2'
+          className='w-1/2 '
             type="email"
             id="email"
             name="email"
