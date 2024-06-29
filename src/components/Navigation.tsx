@@ -1,8 +1,8 @@
 import React from 'react'
 import Avatar from './util/Avatar'
 import SVGIcon from './util/SVGIcon'
-import GitHubIcon from '../assets/github.svg?react';
-import LinkedInIcon from '../assets/linkedin.svg?react';
+import GitHubIcon from '../assets/svg/github.svg?react';
+import LinkedInIcon from '../assets/svg/linkedin.svg?react';
 
 
 const Navigation: React.FC = () => {
@@ -38,7 +38,7 @@ const Navigation: React.FC = () => {
           rel="noopener noreferrer"
           className="inline-block"
         >
-          <SVGIcon SvgComponent={GitHubIcon} ariaLabel="GitHub" color="var(--color-text-base)" />
+          <SVGIcon SvgComponent={GitHubIcon} color="var(--color-text-base)" />
         </a>
 
         <a
@@ -47,7 +47,7 @@ const Navigation: React.FC = () => {
           rel="noopener noreferrer"
           className="inline-block"
         >
-          <SVGIcon SvgComponent={LinkedInIcon} ariaLabel="Linkedin" color="var(--color-text-base)" />
+          <SVGIcon SvgComponent={LinkedInIcon} color="var(--color-text-base)" />
         </a>
       </div>
     </nav>

@@ -1,18 +1,127 @@
-import { forwardRef } from 'react'
+import SkillsIcon from './util/SkillsIcon'
+import {
+  JavaIcon,
+  PythonIcon,
+  CIcon,
+  MIPSIcon,
+  HTMLIcon,
+  CSSIcon,
+  JavaScriptIcon,
+  TypeScriptIcon,
+  ReactIcon,
+  NodeIcon,
+  TailwindIcon,
+  ExpressIcon,
+  ElectronIcon,
+  JotaiIcon,
+  MongoDBIcon,
+  MySQLIcon,
+  JupyterIcon,
+  PandasIcon,
+  MatplotlibIcon,
+  SeabornIcon,
+  ScikitIcon,
+  BashIcon,
+  PowerShellIcon,
+  MATLABIcon,
+} from '../assets/svg'
 
-interface SkillsProps {}
+interface SkillsObject {
+  [key: string]: {
+    [key: string]: React.FunctionComponent<React.SVGProps<SVGSVGElement>> // Adjust the type as per your SkillsIcon component
+  }
+}
 
-const Skills = forwardRef<HTMLElement, SkillsProps>((props, ref) => (
-  <section id="skills" ref={ref} className="pg-style">
-    <h2>Skills Section</h2>
+const skills: SkillsObject = {
+  'Programming Languages': {
+    Java: JavaIcon,
+    Python: PythonIcon,
+    C: CIcon,
+    'MIPS Assembly': MIPSIcon,
+  },
+  'Web Development': {
+    HTML: HTMLIcon,
+    CSS: CSSIcon,
+    JavaScript: JavaScriptIcon,
+    TypeScript: TypeScriptIcon,
+    'React.js': ReactIcon,
+    'Node.js': NodeIcon,
+    Tailwind: TailwindIcon,
+    Express: ExpressIcon,
+    Electron: ElectronIcon,
+    Jotai: JotaiIcon,
+  },
+  Databases: {
+    MongoDB: MongoDBIcon,
+    MySQL: MySQLIcon,
+  },
+  DataScience: {
+    'Jupyter Notebook': JupyterIcon,
+    Pandas: PandasIcon,
+    Matplotlib: MatplotlibIcon,
+    Seaborn: SeabornIcon,
+    'Scikit-learn': ScikitIcon,
+  },
+  Scripting: {
+    'Bash Script': BashIcon,
+    PowerShell: PowerShellIcon,
+    MATLAB: MATLABIcon,
+  },
+}
 
-    <div className="flex flex-col">
-      <div className=''>
-        <h3></h3>
-        <div></div>
-      </div>
-    </div>
-  </section>
-))
+const renderSkills = () => {
+  const skillSections = []
+
+  // Iterate over each category in skills
+  for (const category in skills) {
+    if (skills.hasOwnProperty(category)) {
+      const skillsInCategory = skills[category]
+
+      // Generate header and skills for each category
+      const skillItems = []
+      for (const skill in skillsInCategory) {
+        if (skillsInCategory.hasOwnProperty(skill)) {
+          const SkillIcon = skillsInCategory[skill]
+          skillItems.push(
+            <SkillsIcon
+              key={skill}
+              icon={SkillIcon}
+              color="var(--color-text-base)"
+              text={skill}
+            />
+          )
+        }
+      }
+
+      // Push the generated section to skillSections array
+      skillSections.push(
+        <div
+          key={category}
+          className="flex h-full w-full flex-row justify-between gap-10"
+        >
+          <h3 className="w-1/4 p-2 text-3xl">{category}</h3>
+          <div className="h-full w-3/4 grow border-b-2 border-secondary">
+            <div className="flex flex-row flex-wrap gap-2 p-2">
+              {skillItems}
+            </div>
+          </div>
+        </div>
+      )
+    }
+  }
+
+  return skillSections
+}
+
+const Skills = () => {
+  return (
+    <section id="skills" className="pg-style flex flex-col p-16">
+      <h2 className="mb-16 text-6xl">Skills Section</h2>
+
+      <div className="flex flex-col">{renderSkills()}</div>
+    </section>
+  )
+}
+
 
 export default Skills

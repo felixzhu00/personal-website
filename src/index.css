@@ -37,3 +37,7 @@ html, body, #root, #app {
   height: 100%;
   margin: 0;
 }
+/* In your global CSS or component-specific CSS */
+.svg-container svg {
+  fill: var(--color-text-base); /* Replace with your desired CSS variable or color */
+}
