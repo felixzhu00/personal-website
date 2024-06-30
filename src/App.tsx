@@ -15,8 +15,8 @@ const App: React.FC =
       <main className="px-[10vw] w-full h-full">
         <Home />
         <About />
-        {/* <Skills /> */}
-        {/* <Projects /> */}
+        <Skills />
+        <Projects />
         {/* <Contact /> */}
       </main>
     </>
