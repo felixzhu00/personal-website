@@ -1,10 +1,10 @@
 import SectionHeader from './util/SectionHeader'
 
 const About = () => (
-  <section id="about" className="section max-w-4xl flex-col">
+  <section id="about" className="section max-w-4xl flex-col h-screen flex justify-center">
     <SectionHeader number="01" title="About Me" />
-    <div className="grid grid-cols-[3fr,2fr] gap-[50px]">
-      <div className="text-textAccent">
+    <div className="flex flex-col sm:flex-row gap-[50px]">
+      <div className="text-textAccent w-full">
         <p className="mb-[15px]">
           Hi, I'm Felix Zhu, a recent graduate with a Bachelor's degree in Computer Science from Stony Brook University, where I developed a strong
           foundation in software development and technology. Passionate about creating efficient and innovative solutions, I am eager to leverage my
@@ -20,7 +20,7 @@ const About = () => (
           <li>Express</li>
         </ul>
       </div>
-      <img src="https://example.com/your-image.jpg" alt="Temporary Image" className="h-full w-full bg-textBase" />
+      <img src="https://example.com/your-image.jpg" alt="Temporary Image" className="sm:w-full h-full w-full bg-textBase" />
     </div>
   </section>
 )
