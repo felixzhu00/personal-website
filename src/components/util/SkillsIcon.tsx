@@ -9,13 +9,9 @@ interface SkillsIconProps {
 }
 const SkillsIcon = ({ className, color, icon, text }: SkillsIconProps) => {
   return (
-    <div className="flex aspect-square h-[11vh] justify-between flex-col items-center justify-center rounded bg-secondary text-center">
-      <SVGIcon
-        SvgComponent={icon}
-        className={`h-1/2 w-1/2 grow ${className}`}
-        color={color}
-      />
-      <p className='bg-gray-500 w-full '>{text}</p>
+    <div className='flex flex-col items-center rounded bg-[#112240] text-center justify-between aspect-square h-[15vh] p-4'>
+        <SVGIcon SvgComponent={icon} className={`h-1/2 w-1/2 grow ${className}`} color={color} />
+      <p className="text-[13px] m-0 w-full text-textAccent font-sans font-semibold">{text}</p>
     </div>
   )
 }

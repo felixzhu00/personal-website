@@ -25,6 +25,7 @@ import {
   PowerShellIcon,
   MATLABIcon,
 } from '../assets/svg'
+import SectionHeader from './util/SectionHeader'
 
 interface SkillsObject {
   [key: string]: {
@@ -82,29 +83,19 @@ const renderSkills = () => {
       for (const skill in skillsInCategory) {
         if (skillsInCategory.hasOwnProperty(skill)) {
           const SkillIcon = skillsInCategory[skill]
-          skillItems.push(
-            <SkillsIcon
-              key={skill}
-              icon={SkillIcon}
-              color="var(--color-text-base)"
-              text={skill}
-            />
-          )
+          skillItems.push(<SkillsIcon key={skill} icon={SkillIcon} color="var(--color-text-accent)" text={skill}/>)
         }
       }
 
+      console.log(category)
       // Push the generated section to skillSections array
       skillSections.push(
-        <div
-          key={category}
-          className="flex h-full w-full flex-row justify-between gap-12"
-        >
-          <h3 className="w-1/5 p-2 pt-10 text-3xl">{category}</h3>
-          <div className="h-full w-4/5 grow border-b-2 border-secondary">
-            <div className="flex flex-row flex-wrap gap-2 p-2">
-              {skillItems}
-            </div>
-          </div>
+        <div key={category} className="flex h-full w-full flex-col">
+          <h3 className=" pl-2 pt-5 text-3xl text-textAccent">{category}</h3>
+          <div className="flex flex-row flex-wrap gap-2 p-2 justify-start">{skillItems}</div>
+          {/* <div className="h-full w-4/5 grow border-b-2 border-textAccent"> */}
+            
+          {/* </div> */}
         </div>
       )
     }
@@ -115,13 +106,12 @@ const renderSkills = () => {
 
 const Skills = () => {
   return (
-    <section id="skills" className="pg-style flex flex-col p-16">
-      <h2 className="header">Skills</h2>
+    <section id="skills" className="section flex flex-col">
+      <SectionHeader number="02" title="My Skills" />
 
       <div className="flex flex-col">{renderSkills()}</div>
     </section>
   )
 }
-
 
 export default Skills
