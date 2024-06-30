@@ -35,6 +35,19 @@
     --color-bg-primary:#1C1E1A;
 }
 
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+}
+
+.section {
+    margin: 0px auto;
+    padding: 100px 0px;
+}
 
 .svg-color{
   fill: var(--color-secondary);

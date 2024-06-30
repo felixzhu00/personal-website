@@ -14,7 +14,7 @@ const App: React.FC =
       <Navigation />
       <main className="px-[10vw] w-full h-full">
         <Home />
-        {/* <About /> */}
+        <About />
         {/* <Skills /> */}
         {/* <Projects /> */}
         {/* <Contact /> */}
