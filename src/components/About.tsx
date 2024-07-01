@@ -12,12 +12,12 @@ const About = () => (
         </p>
         <p className="mb-[15px]">Here are a few technologies I’ve been focusing on:</p>
         <ul className="gap-[0px 10px] grid list-none grid-cols-2 overflow-hidden p-0">
-          <li>Java</li>
-          <li>Python</li>
-          <li>React</li>
-          <li>MySQL</li>
-          <li>MongoDB</li>
-          <li>Express</li>
+          <li><span className='text-secondary mr-2'>▹</span>Java</li>
+          <li><span className='text-secondary mr-2'>▹</span>Python</li>
+          <li><span className='text-secondary mr-2'>▹</span>React</li>
+          <li><span className='text-secondary mr-2'>▹</span>MySQL</li>
+          <li><span className='text-secondary mr-2'>▹</span>MongoDB</li>
+          <li><span className='text-secondary mr-2'>▹</span>Express</li>
         </ul>
       </div>
       <img src="https://example.com/your-image.jpg" alt="Temporary Image" className="sm:w-full h-full w-full bg-textBase" />

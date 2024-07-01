@@ -30,16 +30,23 @@ const Contact: React.FC = () => {
   }
 
   return (
-    <section id="contact">
-      <h2>What’s Next?</h2>
-      <h2>Get In Touch</h2>
-      <p>
-        Currently seeking new opportunities and eager to connect! Whether you have a job opportunity or any queries, feel free to reach out—I'm ready
-        to discuss.
-      </p>
-      <a href="" rel="noopener noreferrer" target="_blank">
-        Say Hello
-      </a>
+    <section id="contact" className="section mx-auto mb-24 h-[80vh] max-w-[600px] flex text-center items-center">
+      <div>
+        <h2 className="text-md mb-2 block font-mono font-normal text-secondary">04. What’s Next?</h2>
+        <h2 className="m-0 mb-10 text-[clamp(40px,5vw,60px)] font-semibold leading-[1.1] text-[##ccd6f6] text-textBase">Get In Touch</h2>
+        <p className="m-0 mb-20 text-textAccent">
+          Currently seeking new opportunities and eager to connect! Whether you have a job opportunity or any queries, feel free to reach out—I'm
+          ready to discuss.
+        </p>
+        <a
+          href=""
+          rel="noopener noreferrer"
+          target="_blank"
+          className="rounded border border-secondary px-4 py-3 text-secondary mt-12 font-mono"
+        >
+          Say Hello
+        </a>
+      </div>
     </section>
   )
 }
