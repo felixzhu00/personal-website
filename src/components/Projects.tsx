@@ -25,7 +25,7 @@ const Projects = () => {
   return (
     <section id="projects" className="section flex flex-col">
       <SectionHeader number="03" title="My Projects" />
-      <div className="grid grid-cols-3 gap-3">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
         {projects.slice(0, showMore ? projects.length : 6).map((project, index) => (
           <ProjectCard
             key={index}

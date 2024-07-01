@@ -87,7 +87,6 @@ const renderSkills = () => {
         }
       }
 
-      console.log(category)
       // Push the generated section to skillSections array
       skillSections.push(
         <div key={category} className="flex h-full w-full flex-col">

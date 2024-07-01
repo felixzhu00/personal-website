@@ -1,36 +1,12 @@
-import React, { useState, FormEvent, ChangeEvent } from 'react'
+import GitHubIcon from '../assets/svg/github.svg?react'
+import LinkedInIcon from '../assets/svg/linkedin.svg?react'
+import SVGIcon from './util/SVGIcon'
 
 const Contact: React.FC = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
-  })
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData({
-      ...formData,
-      [name]: value,
-    })
-  }
-
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    // Here you can handle form submission, e.g., send data to server or perform validation
-    console.log(formData) // Replace with actual submission logic
-    // Reset form after submission if needed
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      message: '',
-    })
-  }
 
   return (
-    <section id="contact" className="section mx-auto mb-24 h-[80vh] max-w-[600px] flex text-center items-center">
+    <section id="contact" className="section mx-auto mb-24 flex h-[80vh] max-w-[600px] items-center text-center">
       <div>
         <h2 className="text-md mb-2 block font-mono font-normal text-secondary">04. What’s Next?</h2>
         <h2 className="m-0 mb-10 text-[clamp(40px,5vw,60px)] font-semibold leading-[1.1] text-[##ccd6f6] text-textBase">Get In Touch</h2>
@@ -38,16 +14,17 @@ const Contact: React.FC = () => {
           Currently seeking new opportunities and eager to connect! Whether you have a job opportunity or any queries, feel free to reach out—I'm
           ready to discuss.
         </p>
-        <a
-          href=""
-          rel="noopener noreferrer"
-          target="_blank"
-          className="rounded border border-secondary px-4 py-3 text-secondary mt-12 font-mono"
-        >
+        <a href="" rel="noopener noreferrer" target="_blank" className="mt-12 rounded border border-secondary px-4 py-3 font-mono text-secondary">
           Say Hello
         </a>
+        <div className='flex flex-row gap-2 justify-end mt-10'>
+          <SVGIcon SvgComponent={GitHubIcon} color="var(--color-text-accent)" />
+          <SVGIcon SvgComponent={LinkedInIcon} color="var(--color-text-accent)" />
+        </div>
       </div>
+      
     </section>
+    
   )
 }
 
