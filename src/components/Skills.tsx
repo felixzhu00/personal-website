@@ -91,7 +91,7 @@ const renderSkills = () => {
       skillSections.push(
         <div key={category} className="flex h-full w-full flex-col">
           <h3 className=" pl-2 pt-5 text-2xl text-textAccent">{category}</h3>
-          <div className="flex flex-row flex-wrap gap-2 p-2 justify-start">{skillItems}</div>
+          <div className="flex sm:flex-row sm:flex-wrap p-2 gap-2 sm:justify-start flex-col justify-center">{skillItems}</div>
           {/* <div className="h-full w-4/5 grow border-b-2 border-textAccent"> */}
             
           {/* </div> */}
@@ -99,6 +99,7 @@ const renderSkills = () => {
       )
     }
   }
+
 
   return skillSections
 }

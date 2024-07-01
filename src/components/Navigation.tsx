@@ -6,6 +6,8 @@ import Logo from '../assets/logo.svg?react'
 
 const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const [isScrollingUp, setIsScrollingUp] = useState(true) // Initial state: assume scrolling up
+  const [lastScrollY, setLastScrollY] = useState(0)
 
   const toggleMenu = () => {
     setIsOpen(!isOpen)
@@ -45,20 +47,48 @@ const Navigation: React.FC = () => {
     }
   }, [])
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY
+
+      setIsScrollingUp(currentScrollY < lastScrollY)
+      setLastScrollY(currentScrollY)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [lastScrollY]) // Only re-run if lastScrollY changes
+
+  // Motion variants for navigation animation
+  const navVariants = {
+    hidden: { y: '-100%', transition: { duration: 0.3 } },
+    visible: { y: 0, transition: { duration: 0.3 } },
+  }
+
   return (
-    <header className="fixed top-0 z-10 h-[100px] w-full items-center px-[5vw] text-sm">
-      {/* <aside
-        className="bg-light-navy z-9 visible fixed right-0 top-0 h-screen w-[min(75vw,400px)] items-center justify-center border p-[50px_10px] shadow-[shadow-lg] outline-none"
-      >
-        
-      </aside> */}
+    <motion.header
+    className="fixed top-0 z-10 h-[100px] w-full items-center px-[5vw] text-sm"
+    initial={isScrollingUp ? 'visible' : 'hidden'} // Initial state based on scroll direction
+    animate={isScrollingUp || isOpen ? 'visible' : 'hidden'} // Animate based on scroll and menu open state
+    variants={navVariants}
+  >
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-30 backdrop-blur-lg backdrop-filter h-[100vh]"
+          onClick={toggleMenu} // Close menu when clicking on the backdrop
+        />
+      )}
+
       <motion.div
         initial={{ x: '100%' }} // Initial position outside the viewport
         animate={{ x: isOpen ? 0 : '100%' }} // Slide in when isVisible is true
         transition={{ type: 'tween', duration: 0.5 }} // Animation configuration
         className="fixed right-0 top-0 h-screen w-[min(75vw,400px)] items-center justify-center bg-[#112240] p-4 p-[50px_10px] shadow-md shadow-[shadow-lg] outline-none"
       >
-        <div className="flex flex-col items-center h-[60%] m-[30%] text-textBase font-mono gap-10 text-center ">
+        <div className="m-[30%] flex h-[60%] flex-col items-center gap-10 text-center font-mono text-textBase">
           <ul className="flex flex-col justify-between gap-7">
             {navItems.map((item) => (
               <li key={item.id} className="mx-[5px]">
@@ -69,7 +99,7 @@ const Navigation: React.FC = () => {
               </li>
             ))}
           </ul>
-          <a href="" className="rounded mt-[10px] border w-[150px] border-secondary px-4 py-3 text-secondary">
+          <a href="" className="mt-[10px] w-[150px] rounded border border-secondary px-4 py-3 text-secondary">
             Resume
           </a>
         </div>
@@ -114,105 +144,8 @@ const Navigation: React.FC = () => {
           </a>
         </div>
       </nav>
-    </header>
+      </motion.header>
   )
 }
 
 export default Navigation
-// <nav className="fixed left-0 flex h-full w-1/5 flex-col gap-0.5 border-r-8 border-r-secondary bg-primary p-16 text-xl font-semibold text-textBase hidden sm:block">
-//   <div className="flex flex-1 flex-grow-0 items-center justify-center">
-//     <Avatar name="Felix Zhu" imageUrl={imageUrl} />
-//   </div>
-// <ul className="flex flex-col gap-2 max-h-full overflow-y-auto pt-10 text-3xl">
-//   <li>
-
-//     <a href="#home">Home</a>
-//   </li>
-//   <li>
-//     <a href="#about">About</a>
-//   </li>
-//   <li>
-//     <a href="#skills">Skills</a>
-//   </li>
-//   <li>
-//     <a href="#projects">Projects</a>
-//   </li>
-//   <li>
-//     <a href="#contact">Contact</a>
-//   </li>
-// </ul>
-//   <div className="absolute bottom-10 right-10 mt-auto flex justify-end space-x-4">
-//     <a
-//       href="https://github.com/yourusername"
-//       target="_blank"
-//       rel="noopener noreferrer"
-//       className="inline-block"
-//     >
-//       <SVGIcon SvgComponent={GitHubIcon} color="var(--color-text-base)" />
-//     </a>
-
-//     <a
-//       href="https://linkedin.com/in/yourusername"
-//       target="_blank"
-//       rel="noopener noreferrer"
-//       className="inline-block"
-//     >
-//       <SVGIcon SvgComponent={LinkedInIcon} color="var(--color-text-base)" />
-//     </a>
-//   </div>
-// </nav>
-
-// <nav className="">
-//   <ul className='flex flex-row justify-end gap-0.5 border-r-8 border-r-secondary bg-primary p-8 gap-4 text-xl font-semibold text-textBase'>
-//     <li>
-//       <a href="#home">
-//         Home
-//       </a>
-//     </li>
-//     <li>
-//       <a href="#about">
-//         About
-//       </a>
-//     </li>
-//     <li>
-//       <a href="#skills">
-//         Skills
-//       </a>
-//     </li>
-//     <li>
-//       <a href="#projects">
-//         Projects
-//       </a>
-//     </li>
-//     <li>
-//       <a href="#contact">
-//         Contact
-//       </a>
-//     </li>
-//   </ul>
-
-{
-  /* <ul className="flex flex-col gap-2 max-h-full overflow-y-auto pt-10 text-3xl">
-        
-      </ul>
-      <div className="absolute bottom-10 right-10 mt-auto flex justify-end space-x-4">
-        <a
-          href="https://github.com/yourusername"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block"
-        >
-          <SVGIcon SvgComponent={GitHubIcon} color="var(--color-text-base)" />
-        </a>
-
-        <a
-          href="https://linkedin.com/in/yourusername"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block"
-        >
-          <SVGIcon SvgComponent={LinkedInIcon} color="var(--color-text-base)" />
-        </a>
-      </div> */
-}
-// </nav>
