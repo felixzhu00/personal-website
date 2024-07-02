@@ -4,7 +4,7 @@ const SectionHeader = ({ number, title }: { title?: string; number?: string }) =
       <span className="mr-1 font-normal text-secondary">{number}.</span>
       {title}
     </h2>
-    <div className="ml-4 h-0 flex-grow border border-[#112240]"></div>
+    <div className="ml-4 h-0 flex-grow border border-tri"></div>
   </div>
 )
 

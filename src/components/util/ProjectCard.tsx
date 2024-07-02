@@ -13,7 +13,7 @@ interface ProjectCardProps {
 const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, techStack, className }) => {
   return (
     <div
-      className={`bg-light-navy relative flex h-full flex-col items-start justify-between overflow-auto rounded bg-[#112240] p-8 pt-7 shadow-lg transition-all ${className}`}
+      className={`bg-light-navy relative flex h-full flex-col items-start justify-between overflow-auto rounded bg-tri p-8 pt-7 shadow-lg transition-all ${className}`}
     >
       <header className="w-full">
         <div className="mb-9 flex items-center justify-between">

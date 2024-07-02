@@ -1,12 +1,12 @@
 import SectionHeader from './util/SectionHeader'
 
 const About = () => (
-  <section id="about" className="section flex max-w-4xl flex-col justify-center">
+  <section id="about" className="section flex max-w-4xl flex-col justify-center ">
     <SectionHeader number="01" title="About Me" />
     <div className="flex flex-col gap-[50px] sm:flex-row">
-      <div className="w-full text-textAccent">
-        <p className="mb-[15px]">
-          Hi, I'm Felix Zhu, a recent graduate with a Bachelor's degree in Computer Science from Stony Brook University, where I developed a strong
+      <div className="w-full text-textAccent text-[17px]">
+        <p className="mb-[15px] ">
+          Hi, I'm Felix Zhu, a recent graduate with a Bachelor's degree in Computer Science from <span className='text-secondary'>Stony Brook University</span>, where I developed a strong
           foundation in software development and technology. Passionate about creating efficient and innovative solutions, I am eager to leverage my
           academic background and hands-on experience to embark on a career in software development.
         </p>

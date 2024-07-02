@@ -8,6 +8,7 @@ export default {
         secondary: 'var(--color-secondary)',
         textBase: 'var(--color-text-base)',
         textAccent: 'var(--color-text-accent)',
+        tri: 'var(--color-tri)'
       },
       fontFamily: {
         sans: ['Calibre', 'Inter', 'San Francisco', 'SF Pro Text', '-apple-system', 'system-ui', 'sans-serif'],
