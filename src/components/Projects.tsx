@@ -25,7 +25,7 @@ const Projects = () => {
   return (
     <section id="projects" className="section flex flex-col">
       <SectionHeader number="03" title="My Projects" />
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3 pt-5">
         {projects.slice(0, showMore ? projects.length : 6).map((project, index) => (
           <ProjectCard
             key={index}
@@ -38,7 +38,7 @@ const Projects = () => {
       </div>
       <button 
         onClick={handleShowMore} 
-        className="mt-16 mx-auto rounded border border-secondary px-4 py-3 text-secondary font-mono"
+        className="mt-10 mx-auto rounded border border-secondary px-4 py-3 text-secondary font-mono mb-16"
       >
         {showMore ? 'Show Less' : 'Show More'}
       </button>

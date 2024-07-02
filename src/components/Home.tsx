@@ -1,6 +1,6 @@
 const Home: React.FC = () => {
   return (
-    <section className="flex h-full w-full flex-col items-start justify-center mx-auto">
+    <section className="section min-h-[100vh] flex w-full flex-col items-start justify-center mx-auto">
       <div>
         <h1 className="mb-[30px] ml-[8px] text-secondary font-normal leading-[1.1] font-mono">Hi, my name is</h1>
       </div>

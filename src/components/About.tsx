@@ -1,7 +1,7 @@
 import SectionHeader from './util/SectionHeader'
 
 const About = () => (
-  <section id="about" className="section max-w-4xl flex-col h-[80vh] flex justify-center">
+  <section id="about" className="section max-w-4xl flex-col flex justify-center">
     <SectionHeader number="01" title="About Me" />
     <div className="flex flex-col sm:flex-row gap-[50px]">
       <div className="text-textAccent w-full">
