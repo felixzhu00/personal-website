@@ -70,14 +70,14 @@ const Navigation: React.FC = () => {
 
   return (
     <motion.header
-    className="fixed top-0 z-10 h-[100px] w-full items-center px-[5vw] text-sm"
-    initial={isScrollingUp ? 'visible' : 'hidden'} // Initial state based on scroll direction
-    animate={isScrollingUp || isOpen ? 'visible' : 'hidden'} // Animate based on scroll and menu open state
-    variants={navVariants}
-  >
+      className="fixed top-0 z-10 h-[100px] w-full items-center px-[5vw] text-sm"
+      initial={isScrollingUp ? 'visible' : 'hidden'} // Initial state based on scroll direction
+      animate={isScrollingUp || isOpen ? 'visible' : 'hidden'} // Animate based on scroll and menu open state
+      variants={navVariants}
+    >
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-30 backdrop-blur-lg backdrop-filter h-[100vh]"
+          className="fixed inset-0 h-[100vh] bg-black bg-opacity-30 backdrop-blur-lg backdrop-filter"
           onClick={toggleMenu} // Close menu when clicking on the backdrop
         />
       )}
@@ -144,7 +144,7 @@ const Navigation: React.FC = () => {
           </a>
         </div>
       </nav>
-      </motion.header>
+    </motion.header>
   )
 }
 

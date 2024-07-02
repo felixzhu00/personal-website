@@ -1,11 +1,11 @@
 const SectionHeader = ({ number, title }: { title?: string; number?: string }) => (
-  <div className="flex flex-row items-center mb-10">
-    <h2 className="flex-none text-3xl relative mx-0 flex items-center font-mono text-[clamp(26px,5vw,32px)] font-semibold text-textBase">
+  <div className="mb-10 flex flex-row items-center">
+    <h2 className="relative mx-0 flex flex-none items-center font-mono text-3xl text-[clamp(26px,5vw,32px)] font-semibold text-textBase">
       <span className="mr-1 font-normal text-secondary">{number}.</span>
       {title}
     </h2>
-    <div className="flex-grow ml-4 border border-[#112240] h-0"></div>
+    <div className="ml-4 h-0 flex-grow border border-[#112240]"></div>
   </div>
-);
+)
 
-export default SectionHeader;
+export default SectionHeader

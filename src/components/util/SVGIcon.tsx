@@ -6,17 +6,8 @@ interface SVGIconProps {
   SvgComponent: React.FunctionComponent<React.SVGProps<SVGSVGElement>>
 }
 
-const SVGIcon = ({
-  className = 'h-8 w-8',
-  color,
-  SvgComponent,
-} : SVGIconProps) => {
-  return (
-    <SvgComponent className={className} fill={color} />
-  )
+const SVGIcon = ({ className = 'h-8 w-8', color, SvgComponent }: SVGIconProps) => {
+  return <SvgComponent className={className} fill={color} />
 }
 
 export default SVGIcon
-
-
-

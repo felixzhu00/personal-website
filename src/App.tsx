@@ -6,18 +6,17 @@ import Skills from './components/Skills'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
 
-const App: React.FC =
-  () => (
-    <>
-      <Navigation />
-      <main className="px-[10vw] w-full h-full">
-        <Home />
-        <About />
-        <Skills />
-        <Projects />
-        <Contact />
-      </main>
-    </>
-  )
+const App: React.FC = () => (
+  <>
+    <Navigation />
+    <main className="h-full w-full px-[10vw]">
+      <Home />
+      <About />
+      <Skills />
+      <Projects />
+      <Contact />
+    </main>
+  </>
+)
 
 export default App
