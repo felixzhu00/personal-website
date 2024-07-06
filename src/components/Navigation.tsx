@@ -34,6 +34,15 @@ const Navigation: React.FC = () => {
     closed: { rotate: 0, y: 0 },
     open: { rotate: -45, y: -10.5 },
   }
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, href: string): void => {
+    e.preventDefault()
+    const targetElement = document.querySelector(href)
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: 'smooth',
+      })
+    }
+  }
 
   useEffect(() => {
     const handleResize = () => {
@@ -132,7 +141,7 @@ const Navigation: React.FC = () => {
           <ul className="flex flex-row">
             {navItems.map((item) => (
               <li key={item.id} className="mx-[5px]">
-                <a href={item.href} className="p-[10px]">
+                <a href={item.href} className="p-[10px]" onClick={(e) => handleScroll(e, item.href)}>
                   <span className="mr-[5px] text-secondary">{item.id}.</span>
                   {item.label}
                 </a>

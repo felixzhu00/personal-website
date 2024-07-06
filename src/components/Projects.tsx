@@ -102,7 +102,7 @@ const Projects = () => {
       <SectionHeader number="03" title="My Projects" />
       <div className="grid gap-3 pt-5 md:grid-cols-2 lg:grid-cols-3">
         {projects.slice(0, showMore ? projects.length : 6).map((project, index) => (
-          <ProjectCard key={index} link={project.link} title={project.title} description={project.description} techStack={project.techStack} />
+          <ProjectCard key={index} link={project.link} title={project.title} description={project.description} techStack={project.techStack} href={project.link} />
         ))}
       </div>
       <button onClick={handleShowMore} className="mx-auto mb-16 mt-10 rounded border border-secondary px-4 py-3 font-mono text-secondary">

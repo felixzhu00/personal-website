@@ -8,9 +8,10 @@ interface ProjectCardProps {
   techStack: string[]
   className?: string
   link: string
+  href: string
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, techStack, className }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, techStack, className, href }) => {
   return (
     <div
       className={`bg-light-navy relative flex h-full flex-col items-start justify-between overflow-auto rounded bg-tri p-8 pt-7 shadow-lg transition-all ${className}`}
@@ -21,7 +22,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, techStack
             <SVGIcon SvgComponent={Folder} className="h-[40px] w-[40px]" />
           </div>
           <div>
-            <a aria-label="External Link" target="_blank" rel="noopener noreferrer">
+            <a aria-label="External Link" target="_blank" href={href} rel="noopener noreferrer">
               <SVGIcon SvgComponent={Open} className="mt-neg-4 h-[22px] w-[22px]" />
             </a>
           </div>
