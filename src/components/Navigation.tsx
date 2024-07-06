@@ -115,7 +115,9 @@ const Navigation: React.FC = () => {
       </motion.div>
 
       <nav className="flex h-full w-full flex-row items-center justify-between bg-primary font-mono text-textBase">
-        <SVGIcon SvgComponent={Logo} className="aspect-square w-[45px]" />
+        <a href="#home" className="p-[10px]" onClick={(e) => handleScroll(e, "#home")}>
+          <SVGIcon SvgComponent={Logo} className="aspect-square w-[45px]" />
+        </a>
         <button className="relative flex h-[24px] w-[30px] flex-col items-center justify-center sm:hidden" onClick={toggleMenu}>
           <motion.div
             className="absolute top-0 h-[3px] w-full bg-secondary"
