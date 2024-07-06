@@ -90,7 +90,7 @@ const renderSkills = () => {
       // Push the generated section to skillSections array
       skillSections.push(
         <div key={category} className="flex h-full w-full flex-col">
-          <h3 className="pl-2 pt-5 text-[22px] sm:text-2xl text-textAccent">{category}</h3>
+          <h3 className="pl-2 pt-7 pb-2 text-[22px] sm:text-2xl text-textAccent">{category}</h3>
           <div className="flex flex-col justify-center gap-2 p-2 sm:flex-row sm:flex-wrap sm:justify-start">{skillItems}</div>
         </div>
       )

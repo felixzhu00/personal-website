@@ -1,6 +1,6 @@
 const SectionHeader = ({ number, title }: { title?: string; number?: string }) => (
   <div className="mb-10 flex flex-row items-center">
-    <h2 className="relative mx-0 flex flex-none items-center font-mono text-3xl text-[clamp(26px,5vw,32px)] font-semibold text-textBase">
+    <h2 className="relative mx-0 flex flex-none items-center font-mono text-3xl text-[clamp(30px,5vw,36px)] font-semibold text-textBase">
       <span className="mr-1 font-normal text-secondary">{number}.</span>
       {title}
     </h2>
