@@ -3,6 +3,9 @@ import LinkedInIcon from '../assets/svg/linkedin.svg?react'
 import SVGIcon from './util/SVGIcon'
 
 const Contact: React.FC = () => {
+  const linkedinLink = 'https://www.linkedin.com/in/felix-zhu00/'
+  const githubLink = 'https://github.com/felixzhu00'
+
   return (
     <section id="contact" className="section mx-auto mb-24 flex h-[80vh] max-w-[600px] items-center text-center">
       <div>
@@ -16,8 +19,12 @@ const Contact: React.FC = () => {
           Say Hello
         </a>
         <div className="mt-10 flex flex-row justify-end gap-2">
-          <SVGIcon SvgComponent={GitHubIcon} color="var(--color-text-accent)" />
-          <SVGIcon SvgComponent={LinkedInIcon} color="var(--color-text-accent)" />
+          <a aria-label="External Link" target="_blank" href={githubLink} rel="noopener noreferrer">
+            <SVGIcon SvgComponent={GitHubIcon} color="var(--color-text-accent)" />
+          </a>
+          <a aria-label="External Link" target="_blank" href={linkedinLink} rel="noopener noreferrer">
+            <SVGIcon SvgComponent={LinkedInIcon} color="var(--color-text-accent)" />
+          </a>
         </div>
       </div>
     </section>
