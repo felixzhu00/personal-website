@@ -111,7 +111,12 @@ const Navigation: React.FC = () => {
                 </li>
               ))}
             </ul>
-            <a href="" className="mt-[10px] w-[150px] rounded border border-secondary px-4 py-3 text-secondary">
+            <a
+              href="https://drive.google.com/file/d/1FUKJi0uXk9PQvnMKYq1G6piZmli6d22z/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-[10px] w-[150px] rounded border border-secondary px-4 py-3 text-secondary"
+            >
               Resume
             </a>
           </div>
@@ -153,7 +158,12 @@ const Navigation: React.FC = () => {
                 </li>
               ))}
             </ul>
-            <a href="" className="ml-[15px] rounded border border-secondary px-4 py-3 text-secondary">
+            <a
+              href="https://drive.google.com/file/d/1FUKJi0uXk9PQvnMKYq1G6piZmli6d22z/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-[15px] rounded border border-secondary px-4 py-3 text-secondary"
+            >
               Resume
             </a>
           </div>
