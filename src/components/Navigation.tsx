@@ -8,6 +8,7 @@ const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [isScrollingUp, setIsScrollingUp] = useState(true) // Initial state: assume scrolling up
   const [lastScrollY, setLastScrollY] = useState(0)
+  const [isAtTop, setIsAtTop] = useState(true)
 
   const toggleMenu = () => {
     setIsOpen(!isOpen)
@@ -62,6 +63,7 @@ const Navigation: React.FC = () => {
 
       setIsScrollingUp(currentScrollY < lastScrollY)
       setLastScrollY(currentScrollY)
+      setIsAtTop(currentScrollY === 0)
     }
 
     window.addEventListener('scroll', handleScroll)
@@ -78,84 +80,86 @@ const Navigation: React.FC = () => {
   }
 
   return (
-    <motion.header
-      className="h-[100px] flex items-center px-[5vw] text-sm shadow-xl"
+    <motion.div
       initial={isScrollingUp ? 'visible' : 'hidden'} // Initial state based on scroll direction
       animate={isScrollingUp || isOpen ? 'visible' : 'hidden'} // Animate based on scroll and menu open state
       variants={navVariants}
+      className="fixed top-0 z-10 w-full bg-transparent"
     >
-      {isOpen && (
-        <div
-          className="fixed inset-0 h-[100vh] bg-black bg-opacity-30 backdrop-blur-lg backdrop-filter"
-          onClick={toggleMenu} // Close menu when clicking on the backdrop
-        />
-      )}
+      <header className={`flex h-[100px] items-center px-[5vw] text-sm ${isAtTop ? '' : 'shadow-xl'} backdrop-blur`}>
+        {isOpen && (
+          <div
+            className="fixed inset-0 h-[100vh] bg-black bg-opacity-30 backdrop-blur-lg backdrop-filter"
+            onClick={toggleMenu} // Close menu when clicking on the backdrop
+          />
+        )}
 
-      <motion.div
-        initial={{ x: '100%' }} // Initial position outside the viewport
-        animate={{ x: isOpen ? 0 : '100%' }} // Slide in when isVisible is true
-        transition={{ type: 'tween', duration: 0.5 }} // Animation configuration
-        className="fixed right-0 top-0 h-screen w-[min(75vw,400px)] items-center justify-center bg-[#112240] p-4 p-[50px_10px] shadow-md shadow-[shadow-lg] outline-none"
-      >
-        <div className="m-[30%] flex h-[60%] flex-col items-center gap-10 text-center font-mono text-textBase">
-          <ul className="flex flex-col justify-between gap-7">
-            {navItems.map((item) => (
-              <li key={item.id} className="mx-[5px]">
-                <a href={item.href} className="flex flex-col p-[10px] text-xl" onClick={toggleMenu}>
-                  <span className="text-secondary">{item.id}.</span>
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-          <a href="" className="mt-[10px] w-[150px] rounded border border-secondary px-4 py-3 text-secondary">
-            Resume
+        <motion.div
+          initial={{ x: '100%' }} // Initial position outside the viewport
+          animate={{ x: isOpen ? 0 : '100%' }} // Slide in when isVisible is true
+          transition={{ type: 'tween', duration: 0.5 }} // Animation configuration
+          className="fixed right-0 top-0 h-screen w-[min(75vw,400px)] items-center justify-center bg-[#112240] p-4 p-[50px_10px] shadow-md shadow-[shadow-lg] outline-none"
+        >
+          <div className="m-[30%] flex h-[60%] flex-col items-center gap-10 text-center font-mono text-textBase">
+            <ul className="flex flex-col justify-between gap-7">
+              {navItems.map((item) => (
+                <li key={item.id} className="mx-[5px]">
+                  <a href={item.href} className="flex flex-col p-[10px] text-xl" onClick={toggleMenu}>
+                    <span className="text-secondary">{item.id}.</span>
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <a href="" className="mt-[10px] w-[150px] rounded border border-secondary px-4 py-3 text-secondary">
+              Resume
+            </a>
+          </div>
+        </motion.div>
+
+        <nav className="flex h-full w-full flex-row items-center justify-between bg-transparent font-mono text-textBase">
+          <a href="#home" className="p-[10px]" onClick={(e) => handleScroll(e, '#home')}>
+            <SVGIcon SvgComponent={Logo} className="aspect-square w-[45px]" />
           </a>
-        </div>
-      </motion.div>
+          <button className="relative flex h-[24px] w-[30px] flex-col items-center justify-center sm:hidden" onClick={toggleMenu}>
+            <motion.div
+              className="absolute top-0 h-[3px] w-full bg-secondary"
+              variants={topVariants}
+              animate={isOpen ? 'open' : 'closed'}
+              transition={{ duration: 0.3 }}
+            />
+            <motion.div
+              className="absolute h-[3px] w-full bg-secondary"
+              variants={centerVariants}
+              animate={isOpen ? 'open' : 'closed'}
+              transition={{ duration: 0.3 }}
+            />
+            <motion.div
+              className="absolute bottom-0 h-[3px] w-full bg-secondary"
+              variants={bottomVariants}
+              animate={isOpen ? 'open' : 'closed'}
+              transition={{ duration: 0.3 }}
+            />
+          </button>
 
-      <nav className="flex h-full w-full flex-row items-center justify-between bg-primary font-mono text-textBase ">
-        <a href="#home" className="p-[10px]" onClick={(e) => handleScroll(e, '#home')}>
-          <SVGIcon SvgComponent={Logo} className="aspect-square w-[45px]" />
-        </a>
-        <button className="relative flex h-[24px] w-[30px] flex-col items-center justify-center sm:hidden" onClick={toggleMenu}>
-          <motion.div
-            className="absolute top-0 h-[3px] w-full bg-secondary"
-            variants={topVariants}
-            animate={isOpen ? 'open' : 'closed'}
-            transition={{ duration: 0.3 }}
-          />
-          <motion.div
-            className="absolute h-[3px] w-full bg-secondary"
-            variants={centerVariants}
-            animate={isOpen ? 'open' : 'closed'}
-            transition={{ duration: 0.3 }}
-          />
-          <motion.div
-            className="absolute bottom-0 h-[3px] w-full bg-secondary"
-            variants={bottomVariants}
-            animate={isOpen ? 'open' : 'closed'}
-            transition={{ duration: 0.3 }}
-          />
-        </button>
-
-        <div className="hidden flex-row items-center sm:flex">
-          <ul className="flex flex-row">
-            {navItems.map((item) => (
-              <li key={item.id} className="mx-[5px]">
-                <a href={item.href} className="p-[10px]" onClick={(e) => handleScroll(e, item.href)}>
-                  <span className="mr-[5px] text-secondary">{item.id}.</span>
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-          <a href="" className="ml-[15px] rounded border border-secondary px-4 py-3 text-secondary">
-            Resume
-          </a>
-        </div>
-      </nav>
-    </motion.header>
+          <div className="hidden flex-row items-center sm:flex">
+            <ul className="flex flex-row">
+              {navItems.map((item) => (
+                <li key={item.id} className="mx-[5px]">
+                  <a href={item.href} className="p-[10px]" onClick={(e) => handleScroll(e, item.href)}>
+                    <span className="mr-[5px] text-secondary">{item.id}.</span>
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <a href="" className="ml-[15px] rounded border border-secondary px-4 py-3 text-secondary">
+              Resume
+            </a>
+          </div>
+        </nav>
+      </header>
+    </motion.div>
   )
 }
 
