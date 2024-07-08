@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 
 import Logo from '../assets/logo.svg?react'
+import HoverButton from './util/HoverButton'
 
 const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -86,7 +87,7 @@ const Navigation: React.FC = () => {
       variants={navVariants}
       className="fixed top-0 z-10 w-full bg-transparent"
     >
-      <header className={`flex h-[100px] items-center px-[5vw] text-sm ${isAtTop ? '' : 'shadow-xl'} backdrop-blur`}>
+      <header className={`flex h-[100px] items-center px-[3vw] text-sm ${isAtTop ? '' : 'shadow-xl'} backdrop-blur`}>
         {isOpen && (
           <div
             className="fixed inset-0 h-[100vh] bg-black bg-opacity-30 backdrop-blur-lg backdrop-filter"
@@ -158,14 +159,7 @@ const Navigation: React.FC = () => {
                 </li>
               ))}
             </ul>
-            <a
-              href="https://drive.google.com/file/d/1FUKJi0uXk9PQvnMKYq1G6piZmli6d22z/view?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="ml-[15px] rounded border border-secondary px-4 py-3 text-secondary"
-            >
-              Resume
-            </a>
+            <HoverButton className="px-4 py-2" text="Resume"/>
           </div>
         </nav>
       </header>
