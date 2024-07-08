@@ -1,6 +1,7 @@
 import GitHubIcon from '../assets/svg/github.svg?react'
 import LinkedInIcon from '../assets/svg/linkedin.svg?react'
 import MailIcon from '../assets/svg/mail.svg?react'
+import HoverButton from './util/HoverButton'
 
 import SVGIcon from './util/SVGIcon'
 
@@ -17,14 +18,16 @@ const Contact: React.FC = () => {
           Currently seeking new opportunities and eager to connect! Whether you have a job opportunity or any queries, feel free to reach out—I'm
           ready to discuss.
         </p>
-        <a
-          href="mailto:felix.zhu00@gmail.com"
-          rel="noopener noreferrer"
-          target="_blank"
-          className="mt-12 rounded border border-secondary px-4 py-3 font-mono text-secondary"
-        >
-          Say Hello
-        </a>
+
+        <HoverButton innerClass="px-4 py-3 font-mono">
+          <a
+            href="mailto:felix.zhu00@gmail.com"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Say Hello
+          </a>
+        </HoverButton>
         <div className="mt-10 flex flex-row justify-end gap-2">
           <a aria-label="External Link" target="_blank" href={emailLink} rel="noopener noreferrer">
             <SVGIcon SvgComponent={MailIcon} color="var(--color-text-accent)" />

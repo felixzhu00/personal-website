@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import ProjectCard from './util/ProjectCard'
 import SectionHeader from './util/SectionHeader'
+import HoverButton from './util/HoverButton'
 
 
 const projects = [
@@ -105,9 +106,8 @@ const Projects = () => {
           <ProjectCard key={index} link={project.link} title={project.title} description={project.description} techStack={project.techStack} href={project.link} />
         ))}
       </div>
-      <button onClick={handleShowMore} className="mx-auto mb-16 mt-10 rounded border border-secondary px-4 py-3 font-mono text-secondary">
-        {showMore ? 'Show Less' : 'Show More'}
-      </button>
+      <HoverButton onClick={handleShowMore} outerClass="mx-auto mb-16 mt-10" innerClass='px-4 py-3 font-mono'>{showMore ? 'Show Less' : 'Show More'} </HoverButton>
+
     </section>
   )
 }
