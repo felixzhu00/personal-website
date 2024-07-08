@@ -8,7 +8,7 @@ import Contact from './components/Contact'
 
 const App: React.FC = () => (
   <>
-    <Navigation />
+    <div className='fixed top-0 z-10 w-full bg-primary'><Navigation/></div>
     <main className="h-full w-full px-[10vw]">
       <Home />
       <About />

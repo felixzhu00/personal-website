@@ -79,7 +79,7 @@ const Navigation: React.FC = () => {
 
   return (
     <motion.header
-      className="fixed top-0 z-10 h-[100px] w-full items-center px-[5vw] text-sm"
+      className="h-[100px] flex items-center px-[5vw] text-sm shadow-xl"
       initial={isScrollingUp ? 'visible' : 'hidden'} // Initial state based on scroll direction
       animate={isScrollingUp || isOpen ? 'visible' : 'hidden'} // Animate based on scroll and menu open state
       variants={navVariants}
@@ -114,8 +114,8 @@ const Navigation: React.FC = () => {
         </div>
       </motion.div>
 
-      <nav className="flex h-full w-full flex-row items-center justify-between bg-primary font-mono text-textBase">
-        <a href="#home" className="p-[10px]" onClick={(e) => handleScroll(e, "#home")}>
+      <nav className="flex h-full w-full flex-row items-center justify-between bg-primary font-mono text-textBase ">
+        <a href="#home" className="p-[10px]" onClick={(e) => handleScroll(e, '#home')}>
           <SVGIcon SvgComponent={Logo} className="aspect-square w-[45px]" />
         </a>
         <button className="relative flex h-[24px] w-[30px] flex-col items-center justify-center sm:hidden" onClick={toggleMenu}>
