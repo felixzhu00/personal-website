@@ -30,13 +30,13 @@ const Contact: React.FC = () => {
         </HoverButton>
         <div className="mt-10 flex flex-row justify-end gap-2">
           <a aria-label="External Link" target="_blank" href={emailLink} rel="noopener noreferrer">
-            <SVGIcon SvgComponent={MailIcon} color="var(--color-text-accent)" />
+            <SVGIcon SvgComponent={MailIcon} fillColor="var(--color-text-accent)" />
           </a>
           <a aria-label="External Link" target="_blank" href={githubLink} rel="noopener noreferrer">
-            <SVGIcon SvgComponent={GitHubIcon} color="var(--color-text-accent)" />
+            <SVGIcon SvgComponent={GitHubIcon} fillColor="var(--color-text-accent)" />
           </a>
           <a aria-label="External Link" target="_blank" href={linkedinLink} rel="noopener noreferrer">
-            <SVGIcon SvgComponent={LinkedInIcon} color="var(--color-text-accent)" />
+            <SVGIcon SvgComponent={LinkedInIcon} fillColor="var(--color-text-accent)" />
           </a>
         </div>
       </div>
