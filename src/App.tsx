@@ -30,15 +30,3 @@ const App = () => {
   )
 }
 export default App
-
-// const homeRef = useRef(null);
-
-// const scrollToSection = (ref) => {
-//   if (ref && ref.current) {
-//     ref.current.scrollIntoView({ behavior: 'smooth' });
-//   }
-// };
-
-// useEffect(() => {
-//   scrollToSection(homeRef);
-// }, []);

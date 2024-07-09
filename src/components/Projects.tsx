@@ -2,7 +2,6 @@ import { useState } from 'react'
 import ProjectCard from './util/ProjectCard'
 import SectionHeader from './util/SectionHeader'
 import HoverButton from './util/HoverButton'
-import { motion, AnimatePresence } from 'framer-motion'
 import FadeInSection from './util/FadeInSection'
 
 const projects = [
