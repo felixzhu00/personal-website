@@ -2,7 +2,8 @@ import { useState } from 'react'
 import ProjectCard from './util/ProjectCard'
 import SectionHeader from './util/SectionHeader'
 import HoverButton from './util/HoverButton'
-
+import { motion, AnimatePresence } from 'framer-motion'
+import FadeInSection from './util/FadeInSection'
 
 const projects = [
   {
@@ -102,12 +103,23 @@ const Projects = () => {
     <section id="projects" className="section flex flex-col">
       <SectionHeader number="03" title="My Projects" />
       <div className="grid gap-4 pt-5 md:grid-cols-2 lg:grid-cols-3">
-        {projects.slice(0, showMore ? projects.length : 6).map((project, index) => (
-          <ProjectCard key={index} link={project.link} title={project.title} description={project.description} techStack={project.techStack} href={project.link} />
-        ))}
+          {projects.slice(0, showMore ? projects.length : 6).map((project, index) => (
+            <FadeInSection key={index}>
+              <ProjectCard
+                link={project.link}
+                title={project.title}
+                description={project.description}
+                techStack={project.techStack}
+                href={project.link}
+                
+              />
+            </FadeInSection>
+          ))}
       </div>
-      <HoverButton onClick={handleShowMore} outerClass="mx-auto mb-16 mt-10" innerClass='px-4 py-3 font-mono'>{showMore ? 'Show Less' : 'Show More'} </HoverButton>
 
+      <HoverButton onClick={handleShowMore} outerClass="mx-auto mb-16 mt-10" innerClass="px-4 py-3 font-mono">
+        {showMore ? 'Show Less' : 'Show More'}{' '}
+      </HoverButton>
     </section>
   )
 }

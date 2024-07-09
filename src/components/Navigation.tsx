@@ -85,7 +85,7 @@ const Navigation: React.FC = () => {
       initial={isScrollingUp ? 'visible' : 'hidden'} // Initial state based on scroll direction
       animate={isScrollingUp || isOpen ? 'visible' : 'hidden'} // Animate based on scroll and menu open state
       variants={navVariants}
-      className="fixed top-0 z-10 w-full bg-transparent"
+      className="fixed top-0 z-20 w-full bg-transparent"
     >
       <header className={`flex h-[100px] items-center px-[3vw] text-sm ${isAtTop ? '' : 'shadow-xl'} backdrop-blur`}>
         {isOpen && (
