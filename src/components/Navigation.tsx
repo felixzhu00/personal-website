@@ -161,7 +161,7 @@ const Navigation: React.FC = () => {
             </ul>
             <HoverButton innerClass="px-4 py-2" outerClass='ml-[15px]'>
               <a
-                href="https://drive.google.com/file/d/1FUKJi0uXk9PQvnMKYq1G6piZmli6d22z/view?usp=sharing"
+                href="https://drive.google.com/file/d/1GYqgT9MtA4hKbMf8SwGLxWn2VqIPLRTx/view"
                 target="_blank"
                 rel="noopener noreferrer"
               >Resume</a>
