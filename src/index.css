@@ -142,13 +142,13 @@
     @apply text-6xl text-[clamp(40px,8vw,80px)] font-semibold;
   }
   .heading {
-    @apply text-2xl font-semibold;
+    @apply text-2xl font-semibold xl:text-4xl;
   }
   .sub-heading {
-    @apply text-xl font-semibold;
+    @apply text-xl font-semibold xl:text-2xl;
   }
   .paragraph {
-    @apply text-base;
+    @apply text-base xl:text-lg;
   }
 }
 

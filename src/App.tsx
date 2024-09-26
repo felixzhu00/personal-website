@@ -25,7 +25,7 @@ const App = () => {
   // }, [])
 
   return (
-    <div className="text-text-950">
+    <div className="text-text-950 font-sans">
       <Navigation />
       <Home />
       <FadeInSection>
