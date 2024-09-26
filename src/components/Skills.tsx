@@ -1,4 +1,4 @@
-import SkillsIcon from './util/SkillsIcon'
+import SkillsIcon from './utils/SkillsIcon'
 import {
   JavaIcon,
   PythonIcon,
@@ -25,7 +25,7 @@ import {
   PowerShellIcon,
   MATLABIcon,
 } from '../assets/svg'
-import SectionHeader from './util/SectionHeader'
+import SectionHeader from './utils/SectionHeader'
 
 interface SkillsObject {
   [key: string]: {
@@ -89,9 +89,9 @@ const renderSkills = () => {
 
       // Push the generated section to skillSections array
       skillSections.push(
-        <div key={category} className="flex h-full w-full flex-col">
-          <h3 className="pl-2 pt-7 pb-2 text-[22px] sm:text-2xl text-textAccent">{category}</h3>
-          <div className="flex flex-col justify-center gap-2 p-2 sm:flex-row sm:flex-wrap sm:justify-start">{skillItems}</div>
+        <div key={category} className="mx-auto flex h-full w-full flex-col items-center justify-between">
+          <p className="sub-heading pb-4 pt-6">{category}</p>
+          <div className="mx-auto grid max-w-6xl grid-cols-1 gap-3 sm:grid-cols-3 md:grid-cols-3 xl:grid-cols-4">{skillItems}</div>
         </div>
       )
     }
@@ -102,10 +102,10 @@ const renderSkills = () => {
 
 const Skills = () => {
   return (
-    <section id="skills" className="section flex flex-col">
+    <div id="skills" className="section-spacing flex flex-col">
       <SectionHeader number="02" title="My Skills" />
-      <div className="flex flex-col">{renderSkills()}</div>
-    </section>
+      <div className="section-inner flex flex-col">{renderSkills()}</div>
+    </div>
   )
 }
 
