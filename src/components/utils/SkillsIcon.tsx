@@ -8,7 +8,7 @@ interface SkillsIconProps {
 }
 const SkillsIcon = ({ className, icon, text }: SkillsIconProps) => {
   return (
-    <div className="h-50 flex aspect-square flex-col items-center justify-between rounded-md bg-background-100 p-4 text-center sm:h-44 shadow-lg">
+    <div className="h-50 flex aspect-square flex-col items-center justify-between rounded-md bg-background-100 p-4 text-center sm:h-48 shadow-lg">
       <SVGIcon
         SvgComponent={icon}
         className={`h-1/2 w-1/2 grow ${className}`}

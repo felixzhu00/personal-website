@@ -125,9 +125,9 @@
     --accent-900: #cde5fe;
     --accent-950: #e6f2fe;
   }
-  * {
+  /* * {
     @apply transition-colors duration-500 ease-in-out;
-  }
+  } */
 }
 
 @layer components {
@@ -175,7 +175,22 @@ body {
   background-color: var(--background-50);
 }
 
-
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 1px solid var(--sbackground-100);
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0px 1000px var(--background-100) inset;
+  box-shadow: 0 0 0px 1000px var(--background-100) inset;
+  transition: background-color 5000s ease-in-out 0s;
+  color: white;
+}
 /* @layer base {
   :root {
     --text-50: #eef2f7;

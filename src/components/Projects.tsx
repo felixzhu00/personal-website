@@ -130,7 +130,12 @@ const projects = [
 export default function Projects() {
   const [showMore, setShowMore] = useState(false)
 
-  const handleShowMore = () => {
+  const handleShowMore = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    if (showMore) {
+      e.preventDefault()
+      window.location.href = '/#projects'
+    }
+
     setShowMore(!showMore)
   }
 
@@ -154,8 +159,14 @@ export default function Projects() {
           ))}
         </div>
 
-        <HoverButton onClick={handleShowMore} outerClass="mx-auto mt-6" innerClass="px-4 py-3 font-mono">
-          {showMore ? 'Show Less' : 'Show More'}{' '}
+        <HoverButton
+          onClick={(e) => {
+            handleShowMore(e)
+          }}
+          outerClass="mx-auto mt-6"
+          innerClass="px-4 py-3 font-mono"
+        >
+          {showMore ? 'Show Less' : 'Show More'}
         </HoverButton>
       </div>
     </section>

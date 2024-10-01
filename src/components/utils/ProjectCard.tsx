@@ -20,17 +20,18 @@ export default function ProjectCard({ title, description, techStack, iconStack, 
         whileHover={{ y: -8 }}
         transition={{ duration: 0.1 }}
       >
-        <div className="absolute right-0 top-0 h-0 w-0 border-l-[50px] border-t-[50px] border-l-transparent border-t-secondary-300"></div>
-        <ArrowUpRight className="absolute right-0.5 top-0.5" />
+        <div className="absolute right-0 top-0 h-0 w-0 border-l-[50px] border-t-[50px] border-l-transparent border-t-secondary-300 rounded-md"></div>
+        <ArrowUpRight className="absolute right-1 top-1" />
 
-        <header className="mb-6 w-full">
+        <header className="mb-6 mt-[30px] w-full">
           <div className="sub-heading mb-4 mt-2 flex-row">{title}</div>
           <p className="paragraph">{description}</p>
         </header>
 
-        <ul className="flex list-none flex-wrap items-end gap-0.5 p-0">
+        <ul className="flex list-none flex-wrap items-end gap-1 p-0">
           {iconStack.map((tech, index) => (
-            <li key={index} className="rounded-md bg-secondary-300 p-2">
+            <li key={index} className="rounded-md p-1">
+
               <SVGIcon SvgComponent={tech} className={`h-6 w-6 grow`} />
               {/* {tech} */}
             </li>
