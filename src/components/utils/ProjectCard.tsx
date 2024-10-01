@@ -1,12 +1,13 @@
 import { motion } from 'framer-motion'
 import SVGIcon from './SVGIcon'
 import { ArrowUpRight } from 'lucide-react'
+import { iconMap } from '../../assets/svg'
 
 interface ProjectCardProps {
   title: string
   description: string
   techStack: string[]
-  iconStack: React.FunctionComponent[]
+  iconStack: string[]
   className?: string
   link: string
   href: string
@@ -20,20 +21,18 @@ export default function ProjectCard({ title, description, techStack, iconStack, 
         whileHover={{ y: -8 }}
         transition={{ duration: 0.1 }}
       >
-        <div className="absolute right-0 top-0 h-0 w-0 border-l-[50px] border-t-[50px] border-l-transparent border-t-secondary-300 rounded-md"></div>
+        <div className="absolute right-0 top-0 h-0 w-0 rounded-tr-md border-l-[56px] border-t-[56px] border-l-transparent border-t-secondary-300"></div>
         <ArrowUpRight className="absolute right-1 top-1" />
 
         <header className="mb-6 mt-[30px] w-full">
           <div className="sub-heading mb-4 mt-2 flex-row">{title}</div>
-          <p className="paragraph">{description}</p>
+          <p className="paragraph text-text-800">{description}</p>
         </header>
 
         <ul className="flex list-none flex-wrap items-end gap-1 p-0">
           {iconStack.map((tech, index) => (
-            <li key={index} className="rounded-md p-1">
-
-              <SVGIcon SvgComponent={tech} className={`h-6 w-6 grow`} />
-              {/* {tech} */}
+            <li key={index} className="rounded-md bg-text-200 p-1.5">
+              <SVGIcon iconName={tech} SvgComponent={iconMap[tech]} className={`w-5 h-5`} />
             </li>
           ))}
         </ul>

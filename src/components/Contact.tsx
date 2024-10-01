@@ -38,11 +38,19 @@ const Contact: React.FC = () => {
 
   const labelStyling = 'mb-2 block text-text-950 ml-0.5 sub-heading'
 
+  const placeholder = {
+    firstName: 'John',
+    lastName: 'Smith',
+    email: 'johnsmith123@gmail.com',
+    phone: '9134353451',
+    message: 'Start Typing',
+  }
+
   return (
     <section id="contact" className="section-spacing flex">
       <div className="section-inner items-center py-20 text-center">
         <h2 className="m-0 mb-4 text-[clamp(40px,5vw,60px)] font-semibold leading-[1.1]">Get In Touch</h2>
-        <p className="m-0 mx-auto mb-12 w-full text-justify">
+        <p className="paragraph m-0 mx-auto mb-12 w-full text-justify">
           Currently seeking new opportunities and eager to connect! Whether you have a job opportunity or any queries, feel free to reach out—I'm
           ready to discuss.
         </p>
@@ -61,6 +69,7 @@ const Contact: React.FC = () => {
                 onChange={handleChange}
                 required
                 className={inputBoxStyling}
+                placeholder={placeholder.firstName}
               />
             </div>
             <div className="relative flex-1">
@@ -110,12 +119,6 @@ const Contact: React.FC = () => {
             </button>
           </HoverButton>
         </form>
-
-        {/* <HoverButton innerClass="px-4 py-3">
-          <a href="mailto:felix.zhu00@gmail.com" rel="noopener noreferrer" target="_blank">
-            Say Hello
-          </a>
-        </HoverButton> */}
       </div>
     </section>
   )

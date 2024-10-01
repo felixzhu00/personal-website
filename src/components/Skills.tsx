@@ -1,72 +1,46 @@
 import SkillsIcon from './utils/SkillsIcon'
-import {
-  JavaIcon,
-  PythonIcon,
-  CIcon,
-  MIPSIcon,
-  HTMLIcon,
-  CSSIcon,
-  JavaScriptIcon,
-  TypeScriptIcon,
-  ReactIcon,
-  NodeIcon,
-  TailwindIcon,
-  ExpressIcon,
-  ElectronIcon,
-  JotaiIcon,
-  MongoDBIcon,
-  MySQLIcon,
-  JupyterIcon,
-  PandasIcon,
-  MatplotlibIcon,
-  SeabornIcon,
-  ScikitIcon,
-  BashIcon,
-  PowerShellIcon,
-  MATLABIcon,
-} from '../assets/svg'
 import SectionHeader from './utils/SectionHeader'
 
 interface SkillsObject {
   [key: string]: {
-    [key: string]: React.FunctionComponent<React.SVGProps<SVGSVGElement>> // Adjust the type as per your SkillsIcon component
+    [key: string]: string // Adjust the type as per your SkillsIcon component
   }
 }
 
 const skills: SkillsObject = {
   'Programming Languages': {
-    Java: JavaIcon,
-    Python: PythonIcon,
-    C: CIcon,
-    'MIPS Assembly': MIPSIcon,
+    Java: 'java',
+    Python: 'python',
+    C: 'c',
+    'MIPS Assembly': 'mips',
   },
   'Web Development': {
-    HTML: HTMLIcon,
-    CSS: CSSIcon,
-    JavaScript: JavaScriptIcon,
-    TypeScript: TypeScriptIcon,
-    'React.js': ReactIcon,
-    'Node.js': NodeIcon,
-    Tailwind: TailwindIcon,
-    Express: ExpressIcon,
-    Electron: ElectronIcon,
-    Jotai: JotaiIcon,
+    HTML: 'html',
+    CSS: 'css',
+    JavaScript: 'javascript',
+    TypeScript: 'typescript',
+    'React.js': 'react',
+    'Node.js': 'node',
+    Tailwind: 'tailwind',
+    Express: 'express',
+    Electron: 'electron',
+    Jotai: 'jotai',
   },
   Databases: {
-    MongoDB: MongoDBIcon,
-    MySQL: MySQLIcon,
+    MongoDB: 'mongodb',
+    MySQL: 'mysql',
   },
   'Data Science': {
-    'Jupyter Notebook': JupyterIcon,
-    Pandas: PandasIcon,
-    Matplotlib: MatplotlibIcon,
-    Seaborn: SeabornIcon,
-    'Scikit-learn': ScikitIcon,
+    'Jupyter Notebook': 'jupyter',
+    Pandas: 'pandas',
+    Matplotlib: 'matplotlib',
+    Seaborn: 'seaborn',
+    'Scikit-learn': 'scikit',
   },
   Scripting: {
-    'Bash Script': BashIcon,
-    PowerShell: PowerShellIcon,
-    MATLAB: MATLABIcon,
+    'Bash Script': 'bash',
+    PowerShell: 'powershell',
+    MATLAB: 'matlab',
   },
 }
 

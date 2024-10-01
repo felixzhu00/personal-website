@@ -134,7 +134,7 @@ const Navigation: React.FC = () => {
 
         <nav className="flex h-full w-full flex-row items-center justify-between bg-transparent p-8 font-sans">
           <a href="#home" className="items-center" onClick={(e) => handleScroll(e, '#home')}>
-            <SVGIcon SvgComponent={Logo} className="aspect-square w-8" />
+            <SVGIcon iconName="logo" SvgComponent={Logo} className="aspect-square w-8" />
           </a>
 
           <button className="relative flex h-6 w-8 flex-col items-center justify-center sm:hidden" onClick={toggleMenu}>

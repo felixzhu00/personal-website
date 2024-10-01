@@ -13,13 +13,13 @@ const Footer: React.FC = () => {
         <div className="mb-4 flex space-x-4">
           <div className="mt-10 flex flex-row justify-end gap-6">
             <a aria-label="External Link" target="_blank" href={emailLink} rel="noopener noreferrer">
-              <SVGIcon SvgComponent={MailIcon} className="h-8 w-8 fill-text-950" />
+              <SVGIcon iconName="mail" SvgComponent={MailIcon} className="h-8 w-8 fill-text-950" />
             </a>
             <a aria-label="External Link" target="_blank" href={githubLink} rel="noopener noreferrer">
-              <SVGIcon SvgComponent={GitHubIcon} className="h-8 w-8 fill-text-950" />
+              <SVGIcon iconName="github" SvgComponent={GitHubIcon} className="h-8 w-8 fill-text-950" />
             </a>
             <a aria-label="External Link" target="_blank" href={linkedinLink} rel="noopener noreferrer">
-              <SVGIcon SvgComponent={LinkedInIcon} className="h-8 w-8 fill-text-950" />
+              <SVGIcon iconName="linkedIn" SvgComponent={LinkedInIcon} className="h-8 w-8 fill-text-950" />
             </a>
           </div>
         </div>

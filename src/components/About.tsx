@@ -6,33 +6,19 @@ const About = () => (
     <SectionHeader number="01" title="About Me" />
     <div className="section-inner flex flex-col items-center justify-between gap-8 sm:flex-row">
       <div className="w-full">
-        <p className="mb-4">
+        <p className="paragraph mb-4">
           Hi, I'm Felix Zhu, a recent graduate with a Bachelor's degree in Computer Science from{' '}
-          <span className="text-secondary">Stony Brook University</span>, where I developed a strong foundation in software development and
-          technology. Passionate about creating efficient and innovative solutions, I am eager to leverage my academic background and hands-on
-          experience to embark on a career in software development.
+          <a
+            className="text-text-600 underline underline-offset-4 hover:text-text-400"
+            href="https://www.stonybrook.edu/"
+            rel="noreferrer noopener"
+            target="_blank"
+          >
+            Stony Brook University
+          </a>
+          , where I developed a strong foundation in software development and technology. Passionate about creating efficient and innovative
+          solutions, I am eager to leverage my academic background and hands-on experience to embark on a career in software development.
         </p>
-        <p className="mb-6">Here are a few technologies I’ve been focusing on:</p>
-        <ul className="gap-[0px 10px] grid list-none grid-cols-2 overflow-hidden p-0">
-          <li>
-            <span className="mr-2">▹</span>Java
-          </li>
-          <li>
-            <span className="mr-2">▹</span>Python
-          </li>
-          <li>
-            <span className="mr-2">▹</span>React
-          </li>
-          <li>
-            <span className="mr-2">▹</span>MySQL
-          </li>
-          <li>
-            <span className="mr-2">▹</span>MongoDB
-          </li>
-          <li>
-            <span className="mr-2">▹</span>Express
-          </li>
-        </ul>
       </div>
       <div className="relative mb-8 mr-8 w-3/4 sm:w-full">
         <div className="inset-0 flex aspect-square items-center justify-center">
