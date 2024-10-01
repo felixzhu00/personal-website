@@ -7,7 +7,7 @@ interface SVGIconProps {
 }
 
 const SVGIcon = ({ iconName, className = 'h-8 w-8', SvgComponent }: SVGIconProps) => {
-  const isMonoColor = iconName === 'express' || iconName === 'bash'
+  const isMonoColor = iconName === 'express' || iconName === 'bash' || iconName === 'nextjs' || iconName === 'django'
 
   const strokeColor = isMonoColor ? 'var(--text-950)' : ''
 

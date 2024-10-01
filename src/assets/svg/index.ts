@@ -23,6 +23,11 @@ import ScikitIcon from './scikit.svg?react'
 import SeabornIcon from './seaborn.svg?react'
 import TailwindIcon from './tailwind.svg?react'
 import TypeScriptIcon from './typescript.svg?react'
+import OcamlIcon from './ocaml.svg?react'
+import NextjsIcon from './nextjs.svg?react'
+import DockerIcon from './docker.svg?react'
+import DjangoIcon from './django.svg?react'
+import NumpyIcon from './numpy.svg?react'
 
 // Create and export an icon map
 export const iconMap: Record<string, React.FunctionComponent<React.SVGProps<SVGSVGElement>>> = {
@@ -50,4 +55,9 @@ export const iconMap: Record<string, React.FunctionComponent<React.SVGProps<SVGS
   bash: BashIcon,
   powershell: PowerShellIcon,
   matlab: MATLABIcon,
+  ocaml: OcamlIcon, //
+  nextjs: NextjsIcon,
+  docker: DockerIcon,
+  django: DjangoIcon,
+  numpy: NumpyIcon
 }

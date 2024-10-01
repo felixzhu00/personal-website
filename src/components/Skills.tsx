@@ -20,6 +20,7 @@ const skills: SkillsObject = {
     JavaScript: 'javascript',
     TypeScript: 'typescript',
     'React.js': 'react',
+    'Next.js': 'nextjs',
     'Node.js': 'node',
     Tailwind: 'tailwind',
     Express: 'express',

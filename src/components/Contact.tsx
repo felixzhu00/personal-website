@@ -3,6 +3,7 @@ import HoverButton from './utils/HoverButton'
 import { motion } from 'framer-motion'
 import { MailCheck, Send } from 'lucide-react'
 import emailjs from '@emailjs/browser'
+import ConfettiExplosion from 'react-confetti-explosion'
 
 const Contact: React.FC = () => {
   const form = useRef<HTMLFormElement>(null)
@@ -128,6 +129,7 @@ const Contact: React.FC = () => {
             transition={{ duration: 0.3 }}
             className="flex flex-col items-center justify-between gap-3 rounded-md bg-background-100 p-8 text-text-950"
           >
+            <>{isSubmitted && <ConfettiExplosion />}</>
             <div className="sub-heading">Thank you for your message. </div>I appreciate your message and will respond as soon as possible.
             <MailCheck className="mt-8 h-8 w-8" />
           </motion.div>
