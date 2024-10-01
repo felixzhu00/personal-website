@@ -9,7 +9,8 @@ import Footer from './components/Footer'
 import FadeInSection from './components/utils/FadeInSection'
 const App = () => {
   return (
-    <div className="font-sans text-text-950">
+    <div className="relative min-h-screen font-sans text-text-950">
+      <div className="absolute top-0 z-[-2] h-screen w-full bg-transparent bg-[radial-gradient(ellipse_60%_100%_at_30%_-10%,var(--background-200),rgba(255,255,255,0))]"></div>
       <Navigation />
       <Home />
       <FadeInSection>

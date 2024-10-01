@@ -35,7 +35,6 @@ const Contact: React.FC = () => {
     // Valid Form Data
     const validForm = validateForm()
 
-    console.log(validForm)
     // Return if Not valid
     if (!validForm) return
 
@@ -50,10 +49,8 @@ const Contact: React.FC = () => {
       })
       .then(
         () => {
-          console.log('SUCCESS!')
         },
-        (error) => {
-          console.log('FAILED...', error.text)
+        () => {//error
         }
       )
 
@@ -92,8 +89,6 @@ const Contact: React.FC = () => {
     // Check Message
     if (!message) stringBuilder += '* Message Field is Required\n'
 
-    console.log(stringBuilder.slice(0, -1))
-
     setErrorMessage(stringBuilder.slice(0, -1)) // Remove last \n
 
     return !stringBuilder
@@ -101,7 +96,7 @@ const Contact: React.FC = () => {
 
   const inputStyling = 'focus:border-blue-600 '
 
-  const inputBoxStyling = `block h-12 flex-1 w-full rounded-md bg-text-200 paragraph ${inputStyling} p-4 resize-none`
+  const inputBoxStyling = `block h-12 flex-1 w-full rounded-md bg-text-200 paragraph ${inputStyling} p-4 resize-none shadow-lg`
 
   const labelStyling = 'mb-2 block text-text-950 ml-0.5 sub-heading'
 
@@ -218,10 +213,10 @@ const Contact: React.FC = () => {
             </span>
 
             <HoverButton innerClass="px-8 py-3 ">
-              <button type="submit" className="flex w-full flex-row items-center justify-between gap-3 rounded-md font-semibold">
+              <div className="flex w-full flex-row items-center justify-between gap-3 rounded-md font-semibold">
                 <span>Send</span>
                 <Send className="h-4 w-4" />
-              </button>
+              </div>
             </HoverButton>
           </motion.form>
         )}

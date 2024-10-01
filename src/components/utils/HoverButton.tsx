@@ -12,7 +12,7 @@ const HoverButton = ({ innerClass, outerClass, children, onClick }: HoverButtonP
     <div className={`relative ${outerClass} inline-block text-text-950`}>
       {/* Original Shape */}
       <motion.div
-        className={`absolute left-0 top-0 h-full w-full rounded-md ${innerClass} bg-secondary-600`}
+        className={`absolute left-0 top-0 h-full w-full rounded-md ${innerClass} bg-secondary-600 shadow-lg`}
         initial={{ opacity: 1 }}
         whileHover={{ opacity: 0 }}
         transition={{ duration: 0.2 }}
