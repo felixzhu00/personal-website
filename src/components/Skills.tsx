@@ -65,7 +65,7 @@ const renderSkills = () => {
       // Push the generated section to skillSections array
       skillSections.push(
         <div key={category} className="mx-auto flex h-full w-full flex-col items-center justify-between">
-          <p className={`sub-heading pb-4 ${category === 'Programming Languages' ? '' : 'pt-6'}`}>{category}</p>
+          <p className={`sub-heading pb-4 text-center ${category === 'Programming Languages' ? '' : 'pt-6'}`}>{category}</p>
           <div className="mx-auto grid max-w-6xl grid-cols-1 gap-3 sm:grid-cols-3 md:grid-cols-3 xl:grid-cols-4">{skillItems}</div>
         </div>
       )

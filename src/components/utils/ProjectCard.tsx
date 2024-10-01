@@ -16,7 +16,7 @@ export default function ProjectCard({ title, description, iconStack, className, 
   return (
     <a href={href} target="_blank" rel="noopener noreferrer">
       <motion.div
-        className={`relative flex h-96 w-full flex-col justify-between rounded-md bg-background-100 p-8 shadow-lg placeholder:transition-all ${className}`}
+        className={`relative flex h-[28rem] sm:h-96 w-full flex-col justify-between rounded-md bg-background-100 p-8 shadow-lg placeholder:transition-all ${className}`}
         whileHover={{ y: -8 }}
         transition={{ duration: 0.1 }}
       >

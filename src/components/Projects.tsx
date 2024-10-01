@@ -83,7 +83,6 @@ const projects = [
     techStack: ['React', 'Node.js', 'Electron', 'Jotai', 'Tailwind'],
     iconStack: ['react', 'node', 'electron', 'jotai', 'tailwind'],
   },
-
   {
     link: 'https://github.com/felixzhu00/World_Happiness_Report',
     title: 'World Happiness Report',
