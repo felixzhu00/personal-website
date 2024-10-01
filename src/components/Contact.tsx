@@ -42,8 +42,8 @@ const Contact: React.FC = () => {
     firstName: 'John',
     lastName: 'Smith',
     email: 'johnsmith123@gmail.com',
-    phone: '9134353451',
-    message: 'Start Typing',
+    phone: '9876543210',
+    message: 'Type to Start Messaging . . . ',
   }
 
   return (
@@ -84,6 +84,7 @@ const Contact: React.FC = () => {
                 onChange={handleChange}
                 required
                 className={inputBoxStyling}
+                placeholder={placeholder.lastName}
               />
             </div>
           </div>
@@ -91,13 +92,31 @@ const Contact: React.FC = () => {
             <label htmlFor="email" className={labelStyling}>
               Email
             </label>
-            <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required className={inputBoxStyling} />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              className={inputBoxStyling}
+              placeholder={placeholder.email}
+            />
           </div>
           <div className="relative w-full">
             <label htmlFor="phone" className={labelStyling}>
               Phone
             </label>
-            <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} required className={inputBoxStyling} />
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              required
+              className={inputBoxStyling}
+              placeholder={placeholder.phone}
+            />
           </div>
           <div className="relative w-full">
             <label htmlFor="message" className={labelStyling}>
@@ -110,6 +129,7 @@ const Contact: React.FC = () => {
               onChange={handleChange}
               required
               className={`${inputBoxStyling} mb-8 h-48`}
+              placeholder={placeholder.message}
             ></textarea>
           </div>
 
