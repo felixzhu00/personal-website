@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { ChevronRight, ChevronLeft } from 'lucide-react'
 
 export default function ProjectCardFooter({ techStack }: { techStack: string[] }) {

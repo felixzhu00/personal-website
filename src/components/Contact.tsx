@@ -1,9 +1,12 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import HoverButton from './utils/HoverButton'
 import { motion } from 'framer-motion'
 import { MailCheck, Send } from 'lucide-react'
+import emailjs from '@emailjs/browser'
 
 const Contact: React.FC = () => {
+  const form = useRef<HTMLFormElement>(null)
+
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -16,7 +19,7 @@ const Contact: React.FC = () => {
 
   const [isSubmitted, setIsSubmitted] = useState(false)
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormData((prevData) => ({
       ...prevData,
@@ -24,7 +27,7 @@ const Contact: React.FC = () => {
     }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     // Handle form submission logic (e.g., API call)
 
@@ -38,18 +41,29 @@ const Contact: React.FC = () => {
     // Do Submit Actions
     setIsSubmitted(true)
 
-    // Node Mailer Logic
-    
-
+    if (!form.current) return
+    // EmailJS Logic
+    emailjs
+      .sendForm(import.meta.env.VITE_SERVICE_ID, import.meta.env.VITE_TEMPLATE_ID, form.current, {
+        publicKey: import.meta.env.VITE_PUBLIC_KEY,
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!')
+        },
+        (error) => {
+          console.log('FAILED...', error.text)
+        }
+      )
 
     // Reset form fields
-    // setFormData({
-    //   firstName: '',
-    //   lastName: '',
-    //   email: '',
-    //   phone: '',
-    //   message: '',
-    // })
+    setFormData({
+      firstName: '',
+      lastName: '',
+      email: '',
+      phone: '',
+      message: '',
+    })
   }
   const validateForm = () => {
     // Decontruct FormData
@@ -120,6 +134,7 @@ const Contact: React.FC = () => {
         ) : (
           <motion.form
             onSubmit={handleSubmit}
+            ref={form}
             className="mx-auto flex w-full flex-col items-center space-y-3 rounded-md bg-background-100 p-8 text-left"
             initial={{ opacity: 1 }}
             exit={{ opacity: 0 }}

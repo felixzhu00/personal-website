@@ -4,7 +4,6 @@ import FadeInSection from './utils/FadeInSection'
 import ProjectCard from './utils/ProjectCard'
 import HoverButton from './utils/HoverButton'
 
-import { iconMap } from '../assets/svg'
 
 const projects = [
   {
@@ -126,7 +125,6 @@ export default function Projects() {
                 link={project.link}
                 title={project.title}
                 description={project.description}
-                techStack={project.techStack}
                 iconStack={project.iconStack}
                 href={project.link}
               />

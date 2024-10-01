@@ -6,14 +6,13 @@ import { iconMap } from '../../assets/svg'
 interface ProjectCardProps {
   title: string
   description: string
-  techStack: string[]
   iconStack: string[]
   className?: string
   link: string
   href: string
 }
 
-export default function ProjectCard({ title, description, techStack, iconStack, className, href }: ProjectCardProps) {
+export default function ProjectCard({ title, description, iconStack, className, href }: ProjectCardProps) {
   return (
     <a href={href} target="_blank" rel="noopener noreferrer">
       <motion.div
@@ -32,7 +31,7 @@ export default function ProjectCard({ title, description, techStack, iconStack, 
         <ul className="flex list-none flex-wrap items-end gap-1 p-0">
           {iconStack.map((tech, index) => (
             <li key={index} className="rounded-md bg-text-200 p-1.5">
-              <SVGIcon iconName={tech} SvgComponent={iconMap[tech]} className={`w-5 h-5`} />
+              <SVGIcon iconName={tech} SvgComponent={iconMap[tech]} className={`h-5 w-5`} />
             </li>
           ))}
         </ul>
