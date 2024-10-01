@@ -184,13 +184,15 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  border: 1px solid var(--sbackground-100);
+  border: 1px solid var(--text-200);
   -webkit-text-fill-color: white;
-  -webkit-box-shadow: 0 0 0px 1000px var(--background-100) inset;
-  box-shadow: 0 0 0px 1000px var(--background-100) inset;
+  -webkit-box-shadow: 0 0 0px 1000px var(--text-200) inset;
+  box-shadow: 0 0 0px 1000px var(--text-200) inset;
   transition: background-color 5000s ease-in-out 0s;
   color: white;
+  caret-color: var(--text-950);
 }
+
 /* @layer base {
   :root {
     --text-50: #eef2f7;

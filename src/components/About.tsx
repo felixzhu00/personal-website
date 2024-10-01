@@ -9,7 +9,7 @@ const About = () => (
         <p className="paragraph mb-4">
           Hi, I'm Felix Zhu, a recent graduate with a Bachelor's degree in Computer Science from{' '}
           <a
-            className="text-text-600 underline underline-offset-4 hover:text-text-400"
+            className="text-accent-600 underline underline-offset-4 hover:text-text-400"
             href="https://www.stonybrook.edu/"
             rel="noreferrer noopener"
             target="_blank"
