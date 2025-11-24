@@ -6,7 +6,7 @@ import HoverButton from './utils/HoverButton'
 
 const projects = [
   {
-    link: 'https://github.com/felixzhu00/fake-stack-overflow',
+    link: 'https://github.com/felixzhu00/cyannav',
     title: 'CyanNav',
     description: 'A collaborative project in building a full stack map editing application utilizing software engineering processes and principles.',
     techStack: ['React', 'Node.js', 'MongoDB', 'Express', 'Leaflet.js', 'Docker', 'Cypress'],

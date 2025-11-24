@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { ChevronUp } from 'lucide-react'
 
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false)
@@ -33,7 +34,7 @@ const ScrollToTop = () => {
       }`}
       onClick={scrollToTop}
     >
-      <span className="text-textAccent text-">⮝</span>
+      <ChevronUp className="text-textAccent h-6 w-6" />
     </button>
   )
 }

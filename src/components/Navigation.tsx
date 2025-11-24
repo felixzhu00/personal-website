@@ -122,7 +122,7 @@ const Navigation: React.FC = () => {
               ))}
             </ul>
             <a
-              href="https://drive.google.com/file/d/1FUKJi0uXk9PQvnMKYq1G6piZmli6d22z/view?usp=sharing"
+              href="https://drive.google.com/file/d/1xRdLq9A2U72dk_GMGiIoxRuKWhMR_U3O/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="border-secondary text-secondary mt-[10px] w-[150px] rounded border px-4 py-3"
@@ -169,7 +169,7 @@ const Navigation: React.FC = () => {
               ))}
               <li>
                 <HoverButton innerClass="px-4 py-2 text-text-950" outerClass="mx-2">
-                  <a href="https://drive.google.com/file/d/1GYqgT9MtA4hKbMf8SwGLxWn2VqIPLRTx/view" target="_blank" rel="noopener noreferrer">
+                  <a href="https://drive.google.com/file/d/19iOMR6mmvxHZPYsoM5hk5YfC_BoHdk0p/view?usp=sharing" target="_blank" rel="noopener noreferrer">
                     Resume
                   </a>
                 </HoverButton>

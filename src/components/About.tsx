@@ -7,7 +7,7 @@ const About = () => (
     <div className="section-inner flex flex-col items-center justify-between gap-8 sm:flex-row">
       <div className="w-full">
         <p className="paragraph mb-4">
-          Hi, I'm Felix Zhu, a recent graduate with a Bachelor's degree in Computer Science from{' '}
+          Hi, I'm Felix Zhu, a graduate with a Bachelor's degree in Computer Science from{' '}
           <a
             className="text-accent-600 underline underline-offset-4 hover:text-text-400"
             href="https://www.stonybrook.edu/"

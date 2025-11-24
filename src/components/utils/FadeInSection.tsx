@@ -25,7 +25,7 @@ const FadeInSection = ({ children, delay = 100 }: FadeInSectionProps) => {
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.1 }
     );
 
     if (ref.current) {
